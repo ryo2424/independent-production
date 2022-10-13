@@ -226,10 +226,28 @@ return [
 
     'menu' => [
         [
-            'text' => '商品一覧',
+            'text' => '商品',
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
         ],
+
+        /* 追加ここから */
+        [
+            'topnav_right' => true,
+            'text' => '',
+            'icon' => 'far fa-bell',
+            'submenu' => [
+                [
+                    'text' => 'menu1',
+                    'url' => '#',
+                ],
+                [
+                    'text' => 'menu2',
+                    'url' => '#',
+                ],
+            ],
+        ],
+        /* 追加ここまで */
 
         // AdminLTEデフォルト
         /*

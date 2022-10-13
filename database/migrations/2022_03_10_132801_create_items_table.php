@@ -14,11 +14,21 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
+            // $table->id();
+            // $table->bigInteger('user_id')->unsigned()->index();
+            // $table->bigInteger('category_id')->unsigned()->index();
+            // $table->string('name', 100)->index();
+            // $table->string('status', 100)->default('active');
+            // $table->string('type')->nullable();
+            // $table->string('detail', 500)->nullable();//詳細
+            // $table->timestamps();
+
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index();
             $table->string('name', 100)->index();
             $table->string('status', 100)->default('active');
-            $table->smallInteger('type')->nullable();
+            $table->string('type')->nullable();
+            $table->smallInteger('price')->nullable();
             $table->string('detail', 500)->nullable();
             $table->timestamps();
         });

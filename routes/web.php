@@ -26,3 +26,11 @@ Route::prefix('items')->group(function () {
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
 });
+
+Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+# 編集フォーム⇒UPDATE処理
+Route::get('/update/{id}', [App\Http\Controllers\ItemController::class, 'update']);
+// 削除機能
+Route::delete('/Items/{Item}', [App\Http\Controllers\ItemController::class, 'destroy']);
+//　画像アップロード
+Route::post('/upload', [App\Http\Controllers\ItemController::class, 'addImage']);

@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1>商品登録</h1>
+
 @stop
 
 @section('content')
@@ -20,7 +21,7 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -30,12 +31,16 @@
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
-                        </div>
+                            <input type="text" class="form-control" id="type" name="type" >
+                        </div>  
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <label for="price">値段</label>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="値段">
+                        </div>  
+                    
+                        <div>
+                            <input type="file" name="image">
                         </div>
                     </div>
 
@@ -53,3 +58,8 @@
 
 @section('js')
 @stop
+
+
+
+
+

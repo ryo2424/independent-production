@@ -3,7 +3,20 @@
 @section('title', '商品一覧')
 
 @section('content_header')
-    <h1>商品一覧</h1>
+
+<head><link rel="stylesheet" href="{{ asset('css/app.css') }}"></head>
+
+    <h1 style="margin-bottom:30px;">商品一覧</h1>
+
+<style>
+    .box select{
+        width: 120px;
+    }
+</style>
+
+
+
+
 @stop
 
 @section('content')
@@ -26,8 +39,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>名前</th>
-                                <th>種別</th>
-                                <th>詳細</th>
+                                <th>カテゴリー</th>
+                                <th>値段</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +49,21 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
+                                    <td>{{ $item->price }}</td>
+                                    <td><img src="{{ Storage::url($item->file_path)}}" width="100px"></td>
+                                    <td>
+                                    <a href="{{url('edit')}}/{{$item->id}}" class="btn btn-info">編集</a>
+                                    </td>
+                                    <td>
+                                    <form action="{{ url('Items/'.$item->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <button type="submit" id="delete-Item-{{ $item->id }}" class="btn btn-info">
+                                            <i class="deletebutton" >削除</i>
+                                        </button>
+                                    </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
