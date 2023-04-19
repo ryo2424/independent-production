@@ -31,7 +31,13 @@
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <input type="text" class="form-control" id="type" name="type" >
+                            <!-- <input type="text" class="form-control" id="type" name="type" > -->
+                            <select id="type" class="form-control" name="type">
+                            <option value="Tシャツ">Tシャツ</option>
+                            <option value="ボトム">ボトム</option>
+                            <option value="帽子">帽子</option>
+                            <option value="シューズ">シューズ</option>
+                            </select>
                         </div>  
 
                         <div class="form-group">
